@@ -2,6 +2,7 @@
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "github.copilot.inlineSuggest.enable": true,
+    "typescript.validate.enable": true,
     "eslint.validate": [
         "javascript",
         "javascriptreact",
