@@ -1,5 +1,7 @@
+import { Box, Flex } from "@chakra-ui/react";
 import Header from "./Header";
 import Main from "./Main";
+import SideNav from "./SideNav";
 
 interface LayoutProps {
     children?: JSX.Element;
@@ -7,10 +9,15 @@ interface LayoutProps {
 
 function Layout({ children }: LayoutProps): JSX.Element {
     return (
-        <div>
-            <Header />
-            <Main>{children}</Main>
-        </div>
+        <Flex>
+            <Flex flexDirection="column">
+                <SideNav />
+            </Flex>
+            <Flex flexDirection="column">
+                <Header />
+                <Main>{children}</Main>
+            </Flex>
+        </Flex>
     );
 }
 
