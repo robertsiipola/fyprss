@@ -1,4 +1,5 @@
 import { Box, Flex, VStack } from "@chakra-ui/react";
+import React from "react";
 
 function SideNav(): JSX.Element {
     return (
