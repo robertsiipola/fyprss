@@ -38,3 +38,6 @@ yarn-error.log*
 # Supabase
 **/supabase/.branches
 **/supabase/.temp
+
+# random scribbles
+foo.txt
