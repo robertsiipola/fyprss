@@ -8,7 +8,8 @@
         "start": "next start",
         "lint": "next lint",
         "type-check": "tsc",
-        "db:reset": "supabase db reset"
+        "db:reset": "supabase db reset",
+        "db:prod-migrations": "supabase db push"
     },
     "dependencies": {
         "@chakra-ui/react": "^2.2.1",
