@@ -11,6 +11,8 @@ create table if not exists public.users (
 alter table users
     enable row level security;
 
+drop function if exists public.handle_new_user;
+
 -- inserts a row into public.users
 create function public.handle_new_user() 
 returns trigger 
@@ -18,7 +20,7 @@ language plpgsql
 security definer set search_path = public
 as $$
 begin
-  insert into public.profiles (id, username)
+  insert into public.users (id, username)
   values (new.id, new.email);
   return new;
 end;
