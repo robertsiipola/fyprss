@@ -10,11 +10,14 @@ interface LayoutProps {
 
 function Layout({ children }: LayoutProps): JSX.Element {
     return (
-        <Flex>
-            <Flex flexDirection="column">
-                <SideNav />
-            </Flex>
-            <Flex flexDirection="column">
+        <Flex minHeight="100vh">
+            <SideNav />
+            <Flex
+                flexDirection="column"
+                minWidth="82wv"
+                marginLeft="auto"
+                marginRight="auto"
+            >
                 <Header />
                 <Main>{children}</Main>
             </Flex>
