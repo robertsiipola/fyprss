@@ -23,3 +23,5 @@ for each row execute
 
 alter table feeds
     enable row level security;
+
+alter table feeds alter column id set default uuid_generate_v4();
