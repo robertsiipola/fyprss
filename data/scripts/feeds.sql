@@ -18,3 +18,8 @@ create trigger
 on public.feeds
 for each row execute
   procedure moddatetime(updated_at);
+
+-- alter table to use Row Level Security
+
+alter table feeds
+    enable row level security;
