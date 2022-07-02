@@ -30,3 +30,12 @@ $$;
 create trigger on_auth_user_created
   after insert on auth.users
   for each row execute procedure public.handle_new_user();
+
+-- trigger to update the updated_at time when a user is updated
+drop trigger if exists handle_updated_at_users on public.users;
+
+create trigger 
+  handle_updated_at_users before update 
+on public.users
+for each row execute 
+  procedure moddatetime(updated_at);
