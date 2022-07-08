@@ -9,9 +9,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     return (
         <UserProvider supabaseClient={supabaseClient}>
             <ChakraProvider>
-                <Layout>
-                    <Component {...pageProps} />
-                </Layout>
+                <Component {...pageProps} />
             </ChakraProvider>
         </UserProvider>
     );

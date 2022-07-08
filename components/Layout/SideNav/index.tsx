@@ -23,7 +23,7 @@ function SideNav(): JSX.Element {
                 )}
                 {!user && (
                     <Button onClick={async () => router.push("/signin")}>
-                        Sign-out
+                        Sign-in
                     </Button>
                 )}
             </VStack>
