@@ -1,7 +1,7 @@
-import { SignInForm } from "@/components/Forms/Auth";
 import { Flex } from "@chakra-ui/react";
 import React from "react";
 import type { NextPage } from "next";
+import Auth from "@/components/Auth";
 
 const SignIn: NextPage = () => {
     return (
@@ -13,7 +13,7 @@ const SignIn: NextPage = () => {
             justifyContent="center"
             alignItems="center"
         >
-            <SignInForm />
+            <Auth />
         </Flex>
     );
 };

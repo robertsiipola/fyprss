@@ -22,7 +22,7 @@ function SideNav(): JSX.Element {
                     </Button>
                 )}
                 {!user && (
-                    <Button onClick={async () => router.push("/signin")}>
+                    <Button onClick={async () => router.push("/authenticate")}>
                         Sign-in
                     </Button>
                 )}

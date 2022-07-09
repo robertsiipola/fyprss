@@ -14,11 +14,11 @@ import { supabaseClient } from "@supabase/auth-helpers-nextjs";
 import { AuthViews } from "@/lib/types/auth";
 import ViewChange from "./ViewChange";
 
-interface SignInFormProps {
+interface SignUpFormProps {
     setAuthView: React.Dispatch<AuthViews>;
 }
 
-export default function SignInForm({ setAuthView }: SignInFormProps) {
+export default function SignUpForm({ setAuthView }: SignUpFormProps) {
     const [authError, setAuthError] = useState<string | null>(null);
     const {
         register,
@@ -28,9 +28,9 @@ export default function SignInForm({ setAuthView }: SignInFormProps) {
 
     async function onSubmit(data: AuthInfoType) {
         try {
-            const { error } = await supabaseClient.auth.signIn(
+            const { error } = await supabaseClient.auth.signUp(
                 { email: data.email, password: data.password },
-                { shouldCreateUser: false, redirectTo: "/" }
+                { redirectTo: "/" }
             );
             if (error) {
                 throw new Error(error.message);
@@ -54,15 +54,15 @@ export default function SignInForm({ setAuthView }: SignInFormProps) {
             {authError && (
                 <Alert status="error">
                     <AlertIcon></AlertIcon>
-                    <AlertTitle>Problem with sign-in</AlertTitle>
+                    <AlertTitle>Problem with sign-up</AlertTitle>
                     <AlertDescription>{authError}</AlertDescription>
                 </Alert>
             )}
             <ViewChange
                 setAuthView={setAuthView}
-                authView={AuthViews.SIGN_UP}
-                text="No account? Sign up here"
-            ></ViewChange>
+                authView={AuthViews.SIGN_IN}
+                text="Already have an account? Sign in here"
+            />
         </Box>
     );
 }

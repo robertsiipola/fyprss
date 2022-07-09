@@ -15,7 +15,7 @@ import {
     SubmitHandler,
     DeepRequired,
 } from "react-hook-form";
-import { AuthInfoType } from "./schema";
+import { AuthInfoType } from "./Schema";
 
 interface SigInFieldProps {
     register: UseFormRegister<AuthInfoType>;
@@ -70,7 +70,7 @@ export default function SignFields({
                 </VStack>
             </FormControl>
             <Button isLoading={isSubmitting} type="submit">
-                Sign-in
+                Continue
             </Button>
         </form>
     );
